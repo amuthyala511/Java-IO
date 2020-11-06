@@ -47,6 +47,12 @@ public class EmployeePayRollService {
 		return 0;
 	}
 	
+	public long readEmployeePayRollFileData(IOService ioService) {
+		if(ioService.equals(IOService.FILE_IO))
+			this.empPayrollList = new EmployeePayRollFileIOService().readData();
+		return empPayrollList.size();
+	}
+	
 	public static void main(String[] args) {
 		ArrayList<EmployeePayRollData> empPayrollList = new ArrayList<>();
 		EmployeePayRollService empPayrollService = new EmployeePayRollService(empPayrollList);

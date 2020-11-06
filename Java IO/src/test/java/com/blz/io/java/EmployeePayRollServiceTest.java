@@ -19,5 +19,13 @@ public class EmployeePayRollServiceTest {
 		long entries = empPayrollService.countEntries(com.blz.io.java.EmployeePayRollService.IOService.FILE_IO);
 		Assert.assertEquals(2, entries);
 	}
+	
+	@Test
+	public void readEmployeePayRollFile() {
+		EmployeePayRollService empPayrollService = new EmployeePayRollService();
+		empPayrollService.readEmployeePayRollFileData(com.blz.io.java.EmployeePayRollService.IOService.FILE_IO);
+		long entries = empPayrollService.countEntries(com.blz.io.java.EmployeePayRollService.IOService.FILE_IO);
+		Assert.assertEquals(2, entries);
+	}
 }
 
