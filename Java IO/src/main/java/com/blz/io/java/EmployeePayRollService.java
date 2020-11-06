@@ -36,6 +36,11 @@ public class EmployeePayRollService {
 			new EmployeePayRollFileIOService().writeData(empPayrollList);
 	}
 	
+	public void printData(IOService ioService) {
+		if(ioService.equals(IOService.FILE_IO))
+			new EmployeePayRollFileIOService().printData();
+	}
+	
 	public static void main(String[] args) {
 		ArrayList<EmployeePayRollData> empPayrollList = new ArrayList<>();
 		EmployeePayRollService empPayrollService = new EmployeePayRollService(empPayrollList);
